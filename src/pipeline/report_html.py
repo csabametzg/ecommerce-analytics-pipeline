@@ -2,8 +2,7 @@ from pathlib import Path
 from datetime import datetime
 from src.utils.formatters import format_currency
 
-
-def generate_html_report(metrics, top_customers):
+def generate_html_report(metrics, top_customers, chart_path="output/charts/daily_revenue.png"):
     output_dir = Path("output/reports")
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -114,6 +113,13 @@ def generate_html_report(metrics, top_customers):
                 <p>{format_currency(metrics['avg_order_value'])}</p>
             </div>
         </div>
+
+
+        <div class="section" style="margin-bottom: 30px;">
+            <h2>Daily Revenue Chart</h2>
+            <img src="../charts/daily_revenue.png" alt="Daily Revenue Chart" style="max-width: 100%; border-radius: 12px;">
+        </div>
+
 
         <div class="section">
             <h2>Top Customers</h2>
