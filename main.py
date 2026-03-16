@@ -5,6 +5,7 @@ from src.pipeline.save_orders import save_orders_to_db
 from src.pipeline.sql_metrics import get_sql_metrics, get_top_customers
 from src.pipeline.analysis import load_orders_dataframe, analyze_orders
 from src.pipeline.visualization import plot_daily_revenue
+from src.pipeline.report_txt import generate_txt_report
 
 logger = setup_logger()
 
@@ -63,3 +64,8 @@ logger.info(f"\n{analysis['top_orders']}")
 plot_daily_revenue(analysis["daily_revenue"])
 
 logger.info("Daily revenue chart generated")
+
+
+generate_txt_report(metrics, top_customers)
+
+logger.info("TXT report generated")
