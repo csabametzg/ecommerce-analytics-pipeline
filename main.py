@@ -4,6 +4,7 @@ from src.api.client import fetch_orders
 from src.pipeline.save_orders import save_orders_to_db
 from src.pipeline.sql_metrics import get_sql_metrics, get_top_customers
 from src.pipeline.analysis import load_orders_dataframe, analyze_orders
+from src.pipeline.visualization import plot_daily_revenue
 
 logger = setup_logger()
 
@@ -57,3 +58,8 @@ analysis = analyze_orders(df)
 logger.info(f"DataFrame rows: {len(df)}")
 logger.info("Top 5 orders by value:")
 logger.info(f"\n{analysis['top_orders']}")
+
+
+plot_daily_revenue(analysis["daily_revenue"])
+
+logger.info("Daily revenue chart generated")
