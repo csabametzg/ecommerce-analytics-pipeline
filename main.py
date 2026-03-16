@@ -3,6 +3,7 @@ from src.database.schema import create_tables
 from src.api.client import fetch_orders
 from src.pipeline.save_orders import save_orders_to_db
 from src.pipeline.sql_metrics import get_sql_metrics, get_top_customers
+from src.pipeline.analysis import load_orders_dataframe, analyze_orders
 
 logger = setup_logger()
 
@@ -48,3 +49,11 @@ top_customers = get_top_customers()
 logger.info("Top customers:")
 for customer_name, revenue in top_customers:
     logger.info(f"{customer_name}: {revenue}")
+
+
+df = load_orders_dataframe()
+analysis = analyze_orders(df)
+
+logger.info(f"DataFrame rows: {len(df)}")
+logger.info("Top 5 orders by value:")
+logger.info(f"\n{analysis['top_orders']}")
