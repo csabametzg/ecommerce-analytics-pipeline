@@ -25,3 +25,13 @@ count = cursor.fetchone()[0]
 conn.close()
 
 logger.info(f"Orders in database: {count}")
+
+from src.database.db import get_connection
+
+conn = get_connection()
+cursor = conn.cursor()
+cursor.execute("SELECT COUNT(*) FROM orders")
+count = cursor.fetchone()[0]
+conn.close()
+
+logger.info(f"Orders in database: {count}")

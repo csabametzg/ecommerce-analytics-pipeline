@@ -24,7 +24,7 @@ def save_orders_to_db(orders):
             total_amount = 0.0
 
         cursor.execute("""
-        INSERT INTO orders (order_id, customer_name, total_amount, created_at)
+        INSERT OR IGNORE INTO orders (order_id, customer_name, total_amount, created_at)
             VALUES (?, ?, ?, ?)
         """, (order_id, customer_name, total_amount, created_at))
 

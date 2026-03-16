@@ -6,12 +6,12 @@ def create_tables():
 
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS orders (
-        id INTEGER FRIMARY KEY,
-        order_id TEXT,
-        customer_name TEXT,
-        total_amount REAL,
-        created_at TEXT
-        )
+    id INTEGER PRIMARY KEY,
+    order_id TEXT UNIQUE,
+    customer_name TEXT,
+    total_amount REAL,
+    created_at TEXT
+)
         """)
 
     conn.commit()
