@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 WC_BASE_URL = os.getenv("ENV_WC_BASE_URL")
 WC_CONSUMER_KEY = os.getenv("ENV_WC_CONSUMER_KEY")
-WC_CONSUMER_SECRET = os.getenv("ENV_WC_CONSUMER_SECRET")
+WC_CONSUMER_SECRET = os.getenv("ENV_WC_CONSUMER_SECRET") 
 
 
 def fetch_orders():
