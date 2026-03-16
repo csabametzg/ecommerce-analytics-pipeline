@@ -11,9 +11,6 @@ WC_BASE_URL = os.getenv("ENV_WC_BASE_URL")
 WC_CONSUMER_KEY = os.getenv("ENV_WC_CONSUMER_KEY")
 WC_CONSUMER_SECRET = os.getenv("ENV_WC_CONSUMER_SECRET")
 
-# BASE_URL = "https://beautyland.peakfunneldesign.com"
-# WC_CONSUMER_KEY = "ck_14a454568d42f1eb331c8a48cf12a0e162eebc8c"
-# WC_CONSUMER_SECRET = "cs_4a09195527204940d75722c89f3c1c280b55f25e"
 
 def fetch_orders():
     logger.info("Fetching orders from API")
