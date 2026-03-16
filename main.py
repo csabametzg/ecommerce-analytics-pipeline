@@ -6,7 +6,10 @@ from src.pipeline.sql_metrics import get_sql_metrics, get_top_customers
 from src.pipeline.analysis import load_orders_dataframe, analyze_orders
 from src.pipeline.visualization import plot_daily_revenue
 from src.pipeline.report_txt import generate_txt_report
+from src.pipeline.report_html import generate_html_report
+from src.cli.cli import parse_args
 
+args = parse_args()
 logger = setup_logger()
 
 logger.info("Pipline started")
@@ -14,7 +17,7 @@ logger.info("Pipline started")
 create_tables()
 logger.info("Database initialized")
 
-orders = fetch_orders()
+orders = fetch_orders(limit=args.limit)
 logger.info(f"Orders received: {len(orders)}")
 
 save_orders_to_db(orders)
@@ -61,11 +64,13 @@ logger.info("Top 5 orders by value:")
 logger.info(f"\n{analysis['top_orders']}")
 
 
-plot_daily_revenue(analysis["daily_revenue"])
-
+if not args.skip_charts:
+    plot_daily_revenue(analysis["daily_revenue"])
 logger.info("Daily revenue chart generated")
 
 
 generate_txt_report(metrics, top_customers)
-
 logger.info("TXT report generated")
+
+generate_html_report(metrics, top_customers)
+logger.info("HTML report generated")

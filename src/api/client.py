@@ -12,7 +12,7 @@ WC_CONSUMER_KEY = os.getenv("ENV_WC_CONSUMER_KEY")
 WC_CONSUMER_SECRET = os.getenv("ENV_WC_CONSUMER_SECRET")
 
 
-def fetch_orders():
+def fetch_orders(limit=20):
     logger.info("Fetching orders from API")
 
     if not WC_BASE_URL:
@@ -27,7 +27,7 @@ def fetch_orders():
     response = requests.get(
         url,
         auth=(WC_CONSUMER_KEY, WC_CONSUMER_SECRET),
-        params={"per_page": 20},
+        params={"per_page": limit},
         timeout=30
     )
 
