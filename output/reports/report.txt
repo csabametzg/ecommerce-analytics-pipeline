@@ -1,18 +1,18 @@
 Ecommerce Analytics Report
 ===========================
 
-Generated: 2026-03-16 23:10
+Generated: 2026-03-16 23:24
 
 Key Metrics
 -----------
 Total Orders: 9
-Total Revenue: 110110.0
-Average Order Value: 12234.44
+Total Revenue: 110 110 Ft
+Average Order Value: 12 234 Ft
 
 Top Customers
 -------------
-Csaba Meszaros - 62280.0
-Csaba Mészáros - 22010.0
-Zsuzsanna Téglás - 8390.0
-Németh Pálma - 6790.0
-Zille Itzelberger - 6350.0
+Csaba Meszaros - 62 280 Ft
+Csaba Mészáros - 22 010 Ft
+Zsuzsanna Téglás - 8 390 Ft
+Németh Pálma - 6 790 Ft
+Zille Itzelberger - 6 350 Ft

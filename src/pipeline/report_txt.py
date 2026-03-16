@@ -1,5 +1,6 @@
 from pathlib import Path
 from datetime import datetime
+from src.utils.formatters import format_currency
 
 
 def generate_txt_report(metrics, top_customers):
@@ -20,11 +21,11 @@ def generate_txt_report(metrics, top_customers):
         f.write("-----------\n")
 
         f.write(f"Total Orders: {metrics['total_orders']}\n")
-        f.write(f"Total Revenue: {metrics['total_revenue']}\n")
-        f.write(f"Average Order Value: {metrics['avg_order_value']}\n\n")
+        f.write(f"Total Revenue: {format_currency(metrics['total_revenue'])}\n")
+        f.write(f"Average Order Value: {format_currency(metrics['avg_order_value'])}\n\n")
 
         f.write("Top Customers\n")
         f.write("-------------\n")
 
         for customer, revenue in top_customers:
-            f.write(f"{customer} - {revenue}\n")
+            f.write(f"{customer} - {format_currency(revenue)}\n")

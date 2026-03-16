@@ -1,5 +1,6 @@
 from pathlib import Path
 from datetime import datetime
+from src.utils.formatters import format_currency
 
 
 def generate_html_report(metrics, top_customers):
@@ -32,8 +33,8 @@ def generate_html_report(metrics, top_customers):
 
     <ul>
         <li>Total Orders: {metrics['total_orders']}</li>
-        <li>Total Revenue: {metrics['total_revenue']}</li>
-        <li>Average Order Value: {metrics['avg_order_value']}</li>
+        <li>Total Revenue: {format_currency(metrics['total_revenue'])}</li>
+        <li>Average Order Value: {format_currency(metrics['avg_order_value'])}</li>
     </ul>
 
     <h2>Top Customers</h2>
@@ -49,7 +50,7 @@ def generate_html_report(metrics, top_customers):
         html += f"""
         <tr>
             <td>{customer}</td>
-            <td>{revenue}</td>
+            <td>{format_currency(revenue)}</td>
         </tr>
         """
 
