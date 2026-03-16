@@ -1,12 +1,58 @@
-# Ecommerce Analytics Pipeline
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![SQLite](https://img.shields.io/badge/Database-SQLite-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+
+# Architecture
+
+```text
+WooCommerce REST API
+        │
+        ▼
+   API Client
+        │
+        ▼
+   SQLite Database
+        │
+        ▼
+   SQL Metrics
+        │
+        ▼
+   Pandas Analysis
+        │
+        ▼
+ Visualization
+        │
+        ▼
+ TXT + HTML Reports
+
+```
+
+## Ecommerce Analytics Pipeline
 
 A Python-based data pipeline that collects WooCommerce order data via REST API, stores it in an SQL database, analyzes the data using pandas, and generates reports and visualizations.
 
 This project demonstrates a realistic **data engineering / analytics workflow** including API integration, SQL processing, data analysis, and automated reporting.
 
 ---
+## Why This Project
 
-# Features
+This project demonstrates how a modern e-commerce data pipeline can be built using Python.
+
+It covers the typical workflow used in real-world analytics systems:
+
+- Collect data from a REST API
+- Store and process data using SQL
+- Perform analysis with pandas
+- Generate automated reports
+- Create visualizations
+- Provide CLI interface for automation
+
+The goal of the project is to simulate a simplified data engineering / analytics pipeline.
+
+---
+
+## Features
 
 - WooCommerce REST API integration
 - SQLite database storage
@@ -21,7 +67,7 @@ This project demonstrates a realistic **data engineering / analytics workflow** 
 
 ---
 
-# Tech Stack
+## Tech Stack
 
 - Python
 - SQLite
@@ -33,7 +79,7 @@ This project demonstrates a realistic **data engineering / analytics workflow** 
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
 ecommerce-analytics-pipeline
@@ -82,7 +128,7 @@ ecommerce-analytics-pipeline
 
 ---
 
-# Installation
+## Installation
 
 ### Clone the repository:
 
@@ -115,7 +161,7 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-# Environment Variables
+## Environment Variables
 Create a .env (example) file in the project root:
 ```text
 WC_BASE_URL=https://your-store-url.com
@@ -129,7 +175,7 @@ Example file provided:
 ```
 The .env file is ignored by Git for security reasons.
 
-# Usage
+## Usage
 ```bash
 python main.py
 ```
@@ -140,7 +186,7 @@ Limit number of orders fetched from API:
 python main.py --skip-charts
 ```
 
-# Example Output
+## Example Output
 
 The pipeline generates several outputs:
 
@@ -193,8 +239,8 @@ INFO | Fetching orders from API
 INFO | Orders saved to database
 INFO | Daily revenue chart generated
 ```
-
-# Example Metrics
+---
+## Example Metrics
 Example analytics calculated from the database:
 ```text
 Total Orders: 9
@@ -208,8 +254,8 @@ John Doe: 430
 Jane Smith: 320
 Michael Brown: 210
 ```
-
-# CLI Options
+---
+## CLI Options
 Available command line parameters:
 
 | Parameter       | Description                        |
@@ -226,8 +272,8 @@ python main.py --limit 10
 ```bash
 python main.py --skip-charts
 ```
-
-# Logging
+---
+## Logging
 
 All pipeline operations are logged.
 
@@ -235,27 +281,27 @@ Log file:
 ```text
 output/logs/pipeline.log
 ```
-
-# Future Improvements
+---
+## Future Improvements
 
 - Configuration file support 
 - Unit tests 
 - Docker container 
 - Scheduled pipeline execution 
 - Dashboard UI
-
-# Author
+---
+## Author
 
 Csaba Mészáros
 
 GitHub:
 https://github.com/csabametzg
 
-
-# License
+---
+## License
 MIT License
 
-
+---
 ## Dashboard Example
 
 ![Dashboard](assets/dashboard.png)
