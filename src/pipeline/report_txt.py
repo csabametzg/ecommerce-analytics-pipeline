@@ -14,7 +14,7 @@ def generate_txt_report(metrics, top_customers):
         f.write("Ecommerce Analytics Report\n")
         f.write("===========================\n\n")
 
-        f.write(f"Generated: {datetime.now()}\n\n")
+        f.write(f"Generated: {datetime.now().strftime("%Y-%m-%d %H:%M")}\n\n")
 
         f.write("Key Metrics\n")
         f.write("-----------\n")
