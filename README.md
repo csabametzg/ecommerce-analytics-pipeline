@@ -254,3 +254,14 @@ https://github.com/csabametzg
 
 # License
 MIT License
+
+
+## Dashboard Example
+
+![Dashboard](assets/dashboard.png)
+
+---
+
+## Revenue Chart
+
+![Revenue Chart](assets/revenue_chart.png)
